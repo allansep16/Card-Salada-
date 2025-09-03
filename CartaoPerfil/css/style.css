@@ -1,0 +1,104 @@
+/* 1. Reset CSS e Estilos Globais */
+:root {
+    --cor-fundo: #f0f2f5;
+    --cor-branco: #fff;
+    --cor-texto-primario: #1c1e21;
+    --cor-texto-secundario: #606770;
+    --cor-borda: #dcdfe3;
+    --cor-acento: #007bff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 2. Estilos do Componente Principal: .card */
+.card {
+    background-color: var(--cor-branco);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* 3. Efeito de hover no Card */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. Estilos da Imagem do Card */
+.card__image-container {
+    width: 100%;
+    height: 200px;
+}
+
+.card__image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card__info{
+    padding: 24px;
+}
+
+.card__name{
+    font-size: 1.5rem; /* 24px */
+    color: var(--cor-texto-primario);
+    margin-bottom: 8px;
+
+}
+
+.card__title{
+    font-size: 1.0rem;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 24px;
+}
+
+.card__social {
+    display: flex;
+    justify-content: center;
+    gap: 24px; /* Aumenta o espaçamento entre os ícones */
+    margin-top: 16px;
+}
+
+.card__social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: var(--cor-acento);
+    border: 2px solid var(--cor-acento);
+    border-radius: 50%;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.card__social a:houver{
+    background-color: var(--cor-acento);
+    color: var(--cor-branco);
+    border-color: var(--cor-acento);
+}
+
+@media (max-width:400px){
+    .card{
+        width: 90%;
+    }
+}
